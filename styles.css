@@ -1020,7 +1020,7 @@ input[type="range"]::-moz-range-thumb {
   justify-content: space-between;
   gap: 16px;
 }
-.footer-brand { color: #fff; letter-spacing: 0.08em; }
+.footer-brand { font-family: 'Jost'; color: #fff; letter-spacing: 0.08em; }
 
 @media (min-width: 640px) {
   .site-footer .container { flex-direction: row; }
