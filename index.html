@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Архитектурное бюро и студия премиального дизайна интерьеров</title>
+  <meta name="description" content="Премиальная студия архитектуры и интерьерного дизайна AURA. Проектирование жилых и коммерческих пространств бизнес и премиум класса.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+
+  <!-- Plain hand-written CSS, no framework -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header" class="site-header">
+    <div class="container">
+
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <div class="logo-mark"><span>A</span></div>
+        <div class="logo-text">
+          <span class="logo-name">AURA</span>
+          <span class="logo-sub">Architecture</span>
+        </div>
+      </a>
+
+      <!-- Navigation Desktop -->
+      <nav class="main-nav">
+        <a href="#portfolio">Портфолио</a>
+        <a href="#services">Услуги</a>
+        <a href="#calculator">Калькулятор</a>
+        <a href="#about">О студии</a>
+        <a href="#reviews">Отзывы</a>
+      </nav>
+
+      <!-- Contact Button & Mobile Toggle -->
+      <div class="header-actions">
+        <a href="#contacts" class="btn btn-primary btn-small header-cta">
+          <span>Связаться</span>
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <button id="mobile-menu-btn" class="menu-toggle" aria-label="Открыть меню">
+          <svg class="icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="#portfolio">Портфолио</a>
+      <a href="#services">Услуги</a>
+      <a href="#calculator">Калькулятор</a>
+      <a href="#about">О студии</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts" class="mobile-menu-cta">Связаться с нами</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION SLIDER -->
+  <section class="hero">
+    <div id="hero-slider-container" class="hero-slider">
+      <!-- Slide 1 -->
+      <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" alt="Luxury Villa">
+      </div>
+      <!-- Slide 2 -->
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80" alt="Penthouse Interior">
+      </div>
+      <!-- Slide 3 -->
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80" alt="Modern Minimalist Interior">
+      </div>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Архитектурное бюро & Студия дизайна
+        </div>
+
+        <h1 class="hero-title">
+          Создаем <em class="gold-gradient-text">пространства</em> с неповторимой аурой
+        </h1>
+
+        <p class="hero-text">
+          Проектирование и реализация авторских интерьеров и архитектурных объектов класса Premium & Luxury по всему миру.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+          <a href="#portfolio" class="btn btn-outline">Смотреть проекты</a>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="hero-controls">
+        <button id="slider-prev" class="slider-arrow" aria-label="Предыдущий слайд">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="slider-dots" id="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button id="slider-next" class="slider-arrow" aria-label="Следующий слайд">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="section section--border-top">
+    <div class="container">
+
+      <div class="portfolio-header">
+        <div>
+          <span class="section-eyebrow">Избранное</span>
+          <h2 class="section-title">Портфолио проектов</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-bar">
+          <button data-filter="all" class="portfolio-filter-btn filter-btn active">Все</button>
+          <button data-filter="apartments" class="portfolio-filter-btn filter-btn">Квартиры</button>
+          <button data-filter="houses" class="portfolio-filter-btn filter-btn">Загородные дома</button>
+          <button data-filter="commercial" class="portfolio-filter-btn filter-btn">Коммерция</button>
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div id="portfolio-grid" class="portfolio-grid">
+        <!-- Card 1 -->
+        <div class="portfolio-item gold-border-glow" data-category="apartments" data-id="1">
+          <div class="portfolio-media">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Пентхаус Grand Park">
+            <span class="portfolio-tag">Квартира • 240 м²</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Пентхаус "Grand Park"</h3>
+            <p>Современный минимализм с элементами латуни и натурального мрамора в центре мегаполиса.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="portfolio-item gold-border-glow" data-category="houses" data-id="2">
+          <div class="portfolio-media">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Вилла Residence Forest">
+            <span class="portfolio-tag">Загородный дом • 680 м²</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Вилла "Forest Residence"</h3>
+            <p>Панорамное остекление, парящие консоли и гармония архитектуры с природным ландшафтом.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="portfolio-item gold-border-glow" data-category="commercial" data-id="3">
+          <div class="portfolio-media">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Ресторан Amber Lounge">
+            <span class="portfolio-tag">Коммерция • 450 м²</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Ресторан "Amber Lounge"</h3>
+            <p>Камерная атмосфера, сложная световая архитектура и эксклюзивная мебель по авторским эскизам.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="portfolio-item gold-border-glow" data-category="apartments" data-id="4">
+          <div class="portfolio-media">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Апартаменты Skyline">
+            <span class="portfolio-tag">Квартира • 180 м²</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Апартаменты "Skyline"</h3>
+            <p>Монохромная палитра, интегрированные умные технологии и скрытые зоны хранения.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="portfolio-item gold-border-glow" data-category="houses" data-id="5">
+          <div class="portfolio-media">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Резиденция Oak Estate">
+            <span class="portfolio-tag">Загородный дом • 920 м²</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Резиденция "Oak Estate"</h3>
+            <p>Загородная усадьба в стиле современного нео-классицизма с СПА-комплексом и бассейном.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="portfolio-item gold-border-glow" data-category="commercial" data-id="6">
+          <div class="portfolio-media">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Шоурум Apex HQ">
+            <span class="portfolio-tag">Коммерция • 310 м²</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Офис продаж "Apex HQ"</h3>
+            <p>Представительское пространство, подчеркивающее статус бренда и инновационный подход.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES & PROCESS SECTION -->
+  <section id="services" class="section">
+    <div class="container">
+
+      <div class="section-header section-header--narrow">
+        <span class="section-eyebrow">Экосистема услуг</span>
+        <h2 class="section-title">Наши пакеты &amp; Этапы работы</h2>
+        <p>Мы берем на себя полный цикл создания вашего идеального пространства: от первой идеи до финальной передачи ключей.</p>
+      </div>
+
+      <!-- Services Tabs Header -->
+      <div class="tabs-nav-wrap">
+        <div class="tabs-nav">
+          <button id="tab-btn-1" class="tab-btn active">Дизайн интерьера</button>
+          <button id="tab-btn-2" class="tab-btn">Архитектура</button>
+          <button id="tab-btn-3" class="tab-btn">Комплектация &amp; Авторский надзор</button>
+        </div>
+      </div>
+
+      <!-- Tab Contents -->
+      <div id="tab-content-container" class="tab-contents">
+        <!-- Content 1 -->
+        <div id="tab-content-1" class="tab-content tab-content--cols-3">
+          <div class="service-card">
+            <span class="service-number">01</span>
+            <h3>Эскизный проект</h3>
+            <p>Планировочные решения, стилистические коллажи, концептуальное зонирование и 3D-эскизы главных помещений.</p>
+            <ul class="service-list">
+              <li><span class="check">✓</span> 3 варианта планировки</li>
+              <li><span class="check">✓</span> Мудборды материалов</li>
+              <li><span class="check">✓</span> Обмерный план</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <span class="service-number">02</span>
+            <h3>Рабочий проект</h3>
+            <p>Полный пакет технической чертежной документации для строительной бригады и инженеров.</p>
+            <ul class="service-list">
+              <li><span class="check">✓</span> Схемы электрики и сантехники</li>
+              <li><span class="check">✓</span> Развертки стен и узлы</li>
+              <li><span class="check">✓</span> Спецификация отделки</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <span class="service-number">03</span>
+            <h3>3D-Визуализация 8K</h3>
+            <p>Фотореалистичная визуализация каждого ракурса будущего объекта с точной передачей текстур и света.</p>
+            <ul class="service-list">
+              <li><span class="check">✓</span> До 6 ракурсов на комнату</li>
+              <li><span class="check">✓</span> Виртуальный 360° тур</li>
+              <li><span class="check">✓</span> Подбор реальной мебели</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Content 2 -->
+        <div id="tab-content-2" class="tab-content tab-content--cols-2 hidden">
+          <div class="service-card service-card-alt">
+            <h3>Проектирование Загородных Резиденций</h3>
+            <p>Архитектурный проект от инсоляционного анализа участка до фасадных решений и конструктивного раздела.</p>
+            <span class="service-card-tag">Разделы: ЭП, AR, KR, Genplan</span>
+          </div>
+          <div class="service-card service-card-alt">
+            <h3>Реконструкция и Фасады</h3>
+            <p>Преображение экстерьера существующих зданий с использованием натурального камня, термодерева и керамогранита.</p>
+            <span class="service-card-tag">Авторский фасадный декор</span>
+          </div>
+        </div>
+
+        <!-- Content 3 -->
+        <div id="tab-content-3" class="tab-content tab-content--cols-2 hidden">
+          <div class="service-card service-card-alt">
+            <h3>Полная комплектация</h3>
+            <p>Закупка материалов, сантехники и света напрямую с фабрик Италии и Германии по оптовым ценам.</p>
+          </div>
+          <div class="service-card service-card-alt">
+            <h3>Авторский надзор</h3>
+            <p>Регулярные выезды архитектора на стройплощадку, контроль соблюдения чертежей и решение нестандартных задач.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process Steps Timeline -->
+      <div class="process">
+        <h3>Как мы работаем</h3>
+        <div class="process-grid">
+          <div class="process-step">
+            <span class="process-step-label">Этап 01</span>
+            <h4>Брифинг &amp; Обмеры</h4>
+            <p>Встреча, обсуждение стиля, высокоточные лазерные обмеры объекта.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-label">Этап 02</span>
+            <h4>Концепт &amp; 3D</h4>
+            <p>Создание планировки, согласование концепции и фотореалистичных 3D-картинок.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-label">Этап 03</span>
+            <h4>Чертежи &amp; Смета</h4>
+            <p>Разработка технического пакета чертежей и ведомости чистовых материалов.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-label">Этап 04</span>
+            <h4>Реализация</h4>
+            <p>Стройка, авторский надзор, декорирование и сдача готового объекта.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALCULATOR SECTION -->
+  <section id="calculator" class="section section--border-y">
+    <div class="container container--narrow">
+
+      <div class="section-header">
+        <span class="section-eyebrow">Онлайн Расчет</span>
+        <h2 class="section-title">Калькулятор стоимости проекта</h2>
+        <p>Рассчитайте предварительный бюджет вашего дизайн-проекта за 1 минуту</p>
+      </div>
+
+      <div class="calculator-card gold-border-glow">
+        <form id="calc-form" class="calc-form">
+
+          <!-- Type Select -->
+          <div>
+            <label class="calc-label">1. Тип объекта</label>
+            <div class="type-options" id="type-options">
+              <button type="button" data-rate="4500" class="calc-type-btn type-btn active">
+                <span class="type-btn-title">Квартира / Пентхаус</span>
+                <span class="type-btn-rate">от 4 500 ₽ / м²</span>
+              </button>
+              <button type="button" data-rate="5500" class="calc-type-btn type-btn">
+                <span class="type-btn-title">Загородный дом</span>
+                <span class="type-btn-rate">от 5 500 ₽ / м²</span>
+              </button>
+              <button type="button" data-rate="6000" class="calc-type-btn type-btn">
+                <span class="type-btn-title">Коммерция / Офис</span>
+                <span class="type-btn-rate">от 6 000 ₽ / м²</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Area Slider -->
+          <div>
+            <div class="range-row">
+              <label class="calc-label" style="margin-bottom:0;">2. Площадь помещения</label>
+              <span class="range-value"><span id="area-val">120</span> м²</span>
+            </div>
+            <input type="range" id="area-range" min="30" max="1000" value="120" step="5">
+            <div class="range-labels">
+              <span>30 м²</span>
+              <span>500 м²</span>
+              <span>1000 м²</span>
+            </div>
+          </div>
+
+          <!-- Style Selection -->
+<div>
+  <label class="calc-label">3. Стилистическое направление</label>
+
+  <!-- Скрытый нативный select для сохранения совместимости с расчетами JS -->
+  <select id="style-select" class="hidden">
+    <option value="1" selected>Современный Минимализм / Хай-тек</option>
+    <option value="1.15">Современная Классика / Неоклассика (+15%)</option>
+    <option value="1.2">Джапанди / Органический Премиум (+20%)</option>
+    <option value="1.25">Авторский Ар-деко / Luxury (+25%)</option>
+  </select>
+
+  <!-- Кастомный стильный Dropdown -->
+  <div class="custom-select-wrapper" id="custom-style-dropdown">
+    <button type="button" class="custom-select-trigger" aria-expanded="false">
+      <span class="custom-select-label">Современный Минимализм / Хай-тек</span>
+      <svg class="custom-select-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="custom-select-options">
+      <div class="custom-option selected" data-value="1">
+        <span>Современный Минимализм / Хай-тек</span>
+        <span class="option-badge">Базовая ставка</span>
+      </div>
+      <div class="custom-option" data-value="1.15">
+        <span>Современная Классика / Неоклассика</span>
+        <span class="option-badge">+15%</span>
+      </div>
+      <div class="custom-option" data-value="1.2">
+        <span>Джапанди / Органический Премиум</span>
+        <span class="option-badge">+20%</span>
+      </div>
+      <div class="custom-option" data-value="1.25">
+        <span>Авторский Ар-деко / Luxury</span>
+        <span class="option-badge">+25%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Extra Options -->
+          <div class="checkbox-group">
+            <label class="calc-label" style="margin-bottom:0;">4. Дополнительно</label>
+            <label class="checkbox-row">
+              <input type="checkbox" id="option-3d" checked class="aura-checkbox">
+              <span>Фотореалистичные 3D-визуализации 8K</span>
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" id="option-supervision" class="aura-checkbox">
+              <span>Включить Авторский надзор на 3 месяца (+30%)</span>
+            </label>
+          </div>
+
+          <!-- Result Panel -->
+          <div class="calc-result">
+            <div>
+              <span class="calc-result-label">Ориентировочная стоимость</span>
+              <span id="total-price" class="calc-result-value gold-gradient-text">540 000 ₽</span>
+            </div>
+            <a href="#contacts" class="btn btn-primary btn-block">Зафиксировать стоимость</a>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="container">
+
+      <div class="about-grid">
+        <div>
+          <span class="section-eyebrow">О нас</span>
+          <h2 class="section-title about-title">
+            Архитектура, вдохновленная <em class="gold-gradient-text">совершенством</em>
+          </h2>
+          <p class="about-text">
+            Студия AURA основана в 2014 году. За 12 лет работы мы реализовали более 180 объектов премиум-сегмента по всей Европе и Азии. Наша философия основана на синергии неподвластного времени дизайна, экологичных материалов и передовой инженерии.
+          </p>
+          <p class="about-text">
+            Каждый проект для нас — это уникальная художественная история, отражающая характер, статус и образ жизни владельца.
+          </p>
+
+          <div class="about-stats">
+            <div>
+              <span class="about-stat-num">12+</span>
+              <span class="about-stat-label">Лет опыта</span>
+            </div>
+            <div>
+              <span class="about-stat-num">180+</span>
+              <span class="about-stat-label">Проектов</span>
+            </div>
+            <div>
+              <span class="about-stat-num">15</span>
+              <span class="about-stat-label">Наград</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-media">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80" alt="Интерьер AURA">
+          </div>
+          <div class="about-quote">
+            <span class="about-quote-text">«Красота — это отсутствие всего лишнего.»</span>
+            <span class="about-quote-author">— Главный архитектор AURA</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews" class="section section--border-top">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Отзывы клиентов</span>
+        <h2 class="section-title">Слова признания</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p>«Студия AURA превзошла все наши ожидания. Проект виллы был сдан точно в срок, а авторский надзор спас нас от множества переделок на стройке. Результат — настоящий шедевр.»</p>
+          <div>
+            <h4>Александр В.</h4>
+            <span class="review-meta">Вилла в Рублевке • 720 м²</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <p>«Внимание к каждой детали, идеальное чувство стиля и поразительное умение слушать клиента. Живем в пентхаусе уже полгода и кайфуем каждый день.»</p>
+          <div>
+            <h4>Елена и Михаил</h4>
+            <span class="review-meta">Пентхаус ЖК "City" • 210 м²</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <p>«Дизайн ресторана произвел фурор среди наших гостей. Пространство работает на чек и атмосферу на 100%. Огромное спасибо команде архитекторов!»</p>
+          <div>
+            <h4>Дмитрий К.</h4>
+            <span class="review-meta">Ресторан "Amber" • 450 м²</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS & FORM SECTION -->
+  <section id="contacts" class="section">
+    <div class="container">
+
+      <div class="contacts-grid">
+        <div>
+          <span class="section-eyebrow">Контакты</span>
+          <h2 class="section-title" style="margin-bottom:24px;">Начните ваш проект с AURA</h2>
+          <p class="contact-lead">Запишитесь на персональную консультацию с главным архитектором бюро в нашем флагманском офисе или формате online.</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="icon">📍</span>
+              <div>
+                <strong>Адрес бюро:</strong>
+                <span>Москва, Пресненская набережная, 12 (Башня Федерация)</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="icon">📞</span>
+              <div>
+                <strong>Телефон:</strong>
+                <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="icon">✉️</span>
+              <div>
+                <strong>Email:</strong>
+                <a href="mailto:info@aura-design.ru">info@aura-design.ru</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-card gold-border-glow">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label class="form-label">Ваше имя *</label>
+              <input type="text" id="form-name" required maxlength="60" autocomplete="name" placeholder="Константин" class="text-field">
+              <p id="form-name-error" class="form-error-text hidden"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Телефон *</label>
+              <input type="tel" id="form-phone" required maxlength="18" autocomplete="tel" placeholder="+7 (999) 000-00-00" class="text-field">
+              <p id="form-phone-error" class="form-error-text hidden"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Детали проекта</label>
+              <textarea id="form-message" rows="4" placeholder="Площадь, расположение, пожелания..." class="text-field"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+            <div id="form-alert" class="form-alert hidden">
+              Спасибо! Ваша заявка принята. Наш арт-директор свяжется с вами в течение 15 минут.
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTFOLIO MODAL -->
+  <div id="portfolio-modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="modal-close" class="modal-close">&times;</button>
+      <div id="modal-content">
+        <!-- Content inserted dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-brand font-serif">AURA ARCHITECTURE & DESIGN © 2026</span>
+      <span>Все права защищены. Премиальный дизайн интерьеров.</span>
+      <span><a href="https://uwwwaga.github.io/Buwaga/" target="_blank">Сайт создан Chaus.Code</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
