@@ -1,7 +1,3 @@
-/* =========================================================
-   AURA — Architecture & Design
-   Plain hand-written CSS (no framework / no build step)
-   ========================================================= */
 
 /* ---------- Variables ---------- */
 :root {
@@ -587,7 +583,6 @@ h1, h2, h3, h4, p { margin: 0; }
   margin-bottom: 8px;
 }
 .process-step h4 {
-  font-family: var(--font-serif);
   font-size: 18px;
   color: #fff;
   margin-bottom: 8px;
