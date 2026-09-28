@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Mobile Menu Toggle ---
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
@@ -8,13 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu.classList.toggle('hidden');
   });
 
-  // Close mobile menu on link click
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
   });
 
 
-  // --- Hero Slider Logic ---
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('#slider-dots .dot');
   let currentSlide = 0;
@@ -59,42 +56,41 @@ document.addEventListener('DOMContentLoaded', () => {
   startAutoSlide();
 
 
-  // --- Portfolio Data & Modal Logic ---
   const portfolioData = {
     1: {
       title: 'Пентхаус "Grand Park"',
       category: 'Квартира • 240 м²',
-      img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+      img: '',
       desc: 'Роскошный двухуровневый пентхаус с панорамным видом на центр города. В отделке использован итальянский мрамор Calacatta, панельные системы из шпона коптированного дуба и эксклюзивное освещение от Flos.'
     },
     2: {
       title: 'Вилла "Forest Residence"',
       category: 'Загородный дом • 680 м²',
-      img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
+      img: '',
       desc: 'Архитектурный проект виллы в лесном массиве. Интеграция ландшафта в интерьер благодаря сплошному витражному остеклению. В доме спроектирован спа-комплекс и винная комната.'
     },
     3: {
       title: 'Ресторан "Amber Lounge"',
       category: 'Коммерция • 450 м²',
-      img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+      img: '',
       desc: 'Концептуальный интерьер премиального ресторана. Мягкий камерный свет, барная стойка из цельного массива кварцита и авторская мебель.'
     },
     4: {
       title: 'Апартаменты "Skyline"',
       category: 'Квартира • 180 м²',
-      img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+      img: '',
       desc: 'Лаконичный интерьер для ценителей минимализма. Интегрированная система «Умный дом», скрытые двери скрытого монтажа и безрамочные светильники.'
     },
     5: {
       title: 'Резиденция "Oak Estate"',
       category: 'Загородный дом • 920 м²',
-      img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
+      img: '',
       desc: 'Загородная усадьба с авторскими лепными карнизами, паркетом ёлочкой из французского дуба и двусветной гостиной с камином.'
     },
     6: {
       title: 'Офис продаж "Apex HQ"',
       category: 'Коммерция • 310 м²',
-      img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
+      img: '',
       desc: 'Представительский офис с зонами переговоров класса люкс, шумоизоляционными акустическими капсулами и отделкой из латуни.'
     }
   };
@@ -129,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- Portfolio Filtering ---
   const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
   const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -144,11 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const matches = filter === 'all' || item.getAttribute('data-category') === filter;
 
         if (matches) {
-          // Bring back into flow, then fade in on the next frame
           item.style.display = 'block';
           requestAnimationFrame(() => item.classList.remove('is-fading'));
         } else {
-          // Fade out first, then remove from flow once the transition ends
           item.classList.add('is-fading');
           setTimeout(() => {
             if (item.classList.contains('is-fading')) {
@@ -161,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- Services Tab Switcher ---
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
 
@@ -190,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- Interactive Price Calculator Logic ---
   const typeBtns = document.querySelectorAll('.calc-type-btn');
   const areaRange = document.getElementById('area-range');
   const areaVal = document.getElementById('area-val');
@@ -235,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
   calculateTotal();
 
 
-  // --- Contact Form Validation & Submission ---
   const contactForm = document.getElementById('contact-form');
   const formAlert = document.getElementById('form-alert');
   const nameInput = document.getElementById('form-name');
@@ -243,11 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const nameError = document.getElementById('form-name-error');
   const phoneError = document.getElementById('form-phone-error');
 
-  // Only letters (RU/EN), spaces, hyphens and apostrophes are allowed in the name field
   const NAME_ALLOWED = /[^\p{L}\s'-]/gu;
-  // Only digits and the characters used in phone formatting are allowed
   const PHONE_ALLOWED = /[^\d+()\-\s]/g;
-  const MAX_PHONE_DIGITS = 11; // e.g. 7 999 000 00 00
+  const MAX_PHONE_DIGITS = 11; 
 
   function setFieldError(input, errorEl, message) {
     input.classList.add('field-error');
@@ -260,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
     errorEl.classList.add('hidden');
   }
 
-  // Strip disallowed characters as the user types
   nameInput.addEventListener('input', () => {
     const cleaned = nameInput.value.replace(NAME_ALLOWED, '');
     if (cleaned !== nameInput.value) nameInput.value = cleaned;
@@ -270,7 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
   phoneInput.addEventListener('input', () => {
     let cleaned = phoneInput.value.replace(PHONE_ALLOWED, '');
 
-    // Cap the number of actual digits so the field can't grow forever
     let digitCount = 0;
     let capped = '';
     for (const ch of cleaned) {
@@ -327,7 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => formAlert.classList.add('hidden'), 5000);
   });
 
-  // --- Custom Select Dropdown Logic ---
   const customSelect = document.getElementById('custom-style-dropdown');
   if (customSelect) {
     const trigger = customSelect.querySelector('.custom-select-trigger');
@@ -335,7 +320,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = customSelect.querySelectorAll('.custom-option');
     const nativeSelect = document.getElementById('style-select');
 
-    // Переключение открытия/закрытия
     trigger.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = customSelect.classList.contains('is-open');
@@ -343,32 +327,26 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger.setAttribute('aria-expanded', !isOpen);
     });
 
-    // Выбор опции
     options.forEach(opt => {
       opt.addEventListener('click', () => {
         const value = opt.getAttribute('data-value');
         const text = opt.querySelector('span').textContent;
 
-        // Обновляем текст в кнопке
         label.textContent = text;
 
-        // Переключаем активный класс
         options.forEach(o => o.classList.remove('selected'));
         opt.classList.add('selected');
 
-        // Синхронизируем со скрытым нативным <select> и триггерим его расчет
         if (nativeSelect) {
           nativeSelect.value = value;
           nativeSelect.dispatchEvent(new Event('change'));
         }
 
-        // Закрываем список
         customSelect.classList.remove('is-open');
         trigger.setAttribute('aria-expanded', 'false');
       });
     });
 
-    // Закрытие при клике вне дропдауна
     document.addEventListener('click', (e) => {
       if (!customSelect.contains(e.target)) {
         customSelect.classList.remove('is-open');
